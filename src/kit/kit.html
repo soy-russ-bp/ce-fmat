@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CE FMAT</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .acordeon {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-size: 18px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .contenido {
+      padding: 12px;
+      display: none;
+      background-color: #f1f1f1;
+      overflow: hidden;
+      border-radius: 0 0 5px 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../assets/logo.png" alt="CE FMAT Logo">
+    <h1>CE FMAT</h1>
+    <h1></h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">Inicio</a>
+    <a href="#">Kit de supervivencia</a>
+    <a href="#">Emprendimientos</a>
+    <a href="#">Beneficios UADY</a>
+  </nav>
+
+  <div class="container">
+    <div class="main-content">
+      <h2>Kit de supervivencia</h2>
+
+      <button class="acordeon">Carga Académica</button>
+      <div class="contenido">
+        <p>Revisa tu carga académica con frecuencia en el SICEI. Recuerda que puedes ajustar tu horario solo en las primeras semanas del semestre.</p>
+      </div>
+
+      <button class="acordeon">Contactar Profesores</button>
+      <div class="contenido">
+        <p>Utiliza tu correo institucional y sé claro y respetuoso. Los profesores suelen responder dentro de uno o dos días hábiles.</p>
+      </div>
+
+      <button class="acordeon">Grupos de Apoyo</button>
+      <div class="contenido">
+        <p>Únete a los grupos de WhatsApp o Telegram de tu generación. También puedes acercarte al Consejo Estudiantil si necesitas ayuda académica o emocional.</p>
+      </div>
+
+      <button class="acordeon">Bibliografía Recomendada</button>
+      <div class="contenido">
+        <p>Pide a tus profesores recomendaciones de libros o accede a la biblioteca digital de la UADY. También puedes consultar recursos en línea confiables como Khan Academy, Libros UADY y más.</p>
+      </div>
+
+    </div>
+
+    <div class="contacts">
+      <h3>Contactos</h3>
+      <p><img src="https://img.icons8.com/win10/512/FFFFFF/instagram-new.png" width="35px"> ce.fmat </p>
+      <p>Consejo Estudiantil FMAT 2025 2027</p>
+      <p>consejo.fmat 2025 2027</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Consejo Estudiantil FMAT. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const botones = document.querySelectorAll(".acordeon");
+    botones.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const contenido = btn.nextElementSibling;
+        contenido.style.display = (contenido.style.display === "block") ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>
+
