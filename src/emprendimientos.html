@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CE FMAT</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="CE FMAT Logo">
+    <h1>CE FMAT</h1>
+    <h1></h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="kit.html">Kit Supervivencia</a>
+    <a href="#">Emprendimientos</a>
+    <a href="#">Beneficios UADY</a>
+  </nav>
+
+  <div class="container">
+      
+    <div class="main-content">
+      <div class="select-box">
+        <label for="category-select"><strong>Categoría:</strong></label>
+        <select id="category-select">
+          <option value="tech">Tech de estudiantes</option>
+          <option value="comidas">Comidas</option>
+          <option value="otros">Otros</option>
+        </select>   
+      </div>
+      <div  id="category-content">
+      </div>
+    </div>
+
+    <div class="contacts">
+      <h3>Contactos</h3>
+      <!-- 
+      <p><img src="https://img.icons8.com/win10/512/FFFFFF/instagram-new.png" width="35px" alt="Instagram"> ce.fmat</p>
+      <p>Consejo Estudiantil FMAT 2025 - 2027</p>
+      <p>consejo.fmat 2025 - 2027</p>
+      -->
+    </div>
+  </div> 
+
+  <footer>
+    &copy; 2025 Consejo Estudiantil FMAT. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
+
+
+  <script>
+    const content = {
+      tech: `
+        <div class="tech-card">
+          <img src="assets/kiin.png" alt="Logo Kiin" class="tech-logo" height=55px>
+          <div>
+            <h3>Kiin</h3>
+            <p>Desde el Consejo Estudiantil, te damos la bienvenida a este lugar donde todos —sin excepción— venimos a aprender, a equivocarnos y a crecer. A veces lo utilizamos para cargar materias.</p>
+          </div>
+        </div>
+        <div class="tech-card">
+          <img src="assets/svim.png" alt="Logo Svim" class="tech-logo">
+          <div>
+            <h3>Svim</h3>
+            <p>Desde el Consejo Estudiantil, te damos la bienvenida a este lugar donde todos —sin excepción— venimos a aprender, a equivocarnos y a crecer. A veces lo utilizamos para cargar materias.</p>
+          </div>
+        </div>
+        <div class="tech-card">
+          <img src="assets/inverskit.png" alt="Logo Inverskit" class="tech-logo" height=55px>
+          <div>
+            <h3>Inverskit</h3>
+            <p>Desde el Consejo Estudiantil, te damos la bienvenida a este lugar donde todos —sin excepción— venimos a aprender, a equivocarnos y a crecer. A veces lo utilizamos para cargar materias.</p>
+          </div>
+        </div>
+      `,
+      comidas: `
+        <div class="tech-card">
+          <img src="assets/tacos.png" alt="Tacos" class="tech-logo">
+          <div>
+            <h3>Tacos UADY</h3>
+            <p>Un clásico para sobrevivir el semestre. Ricos, baratos y siempre cerca.</p>
+          </div>
+        </div>
+      `,
+      otros: `
+        <div class="tech-card">
+          <img src="assets/fotocopiadora.png" alt="Fotocopiadora" class="tech-logo">
+          <div>
+            <h3>Fotocopiadora FMAT</h3>
+            <p>Impresiones, anillados y copias para que no te falte nada.</p>
+          </div>
+        </div>
+      `
+    };
+
+    const select = document.getElementById('category-select');
+    const contentDiv = document.getElementById('category-content');
+
+    function updateContent() {
+      const value = select.value;
+      contentDiv.innerHTML = content[value];
+    }
+
+    select.addEventListener('change', updateContent);
+    window.addEventListener('DOMContentLoaded', updateContent);
+  </script>
+</body>
+</html>
+
+
