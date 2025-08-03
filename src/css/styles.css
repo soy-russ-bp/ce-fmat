@@ -142,6 +142,11 @@ header img.loaded {
       border-radius: 0 0 5px 5px;
     }
 
+    /* convenios, quitar texto de ig */
+    .instagram-media p {
+      display: none !important;
+    }
+
 
     @media (min-width: 768px) {
       .container {
