@@ -5,6 +5,16 @@
       --card-bg: #1a1a2e;
     }
 
+    header img {
+  height: 80px;
+  opacity: 0;
+  transition: opacity 0.8s ease; /* puedes ajustar duración */
+}
+
+header img.loaded {
+  opacity: 1;
+}
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -110,6 +120,27 @@
         align-items: center;
       }
 
+     /* clases de kit.html */ 
+    .acordeon {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-size: 18px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .contenido {
+      padding: 12px;
+      display: none;
+      background-color: #f1f1f1;
+      overflow: hidden;
+      border-radius: 0 0 5px 5px;
+    }
 
 
     @media (min-width: 768px) {
