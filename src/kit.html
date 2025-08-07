@@ -3,10 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CE FMAT</title>
-
+  <title>CE FMAT - Kit de Supervivencia</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/script.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+      const acordiones = document.querySelectorAll(".acordeon");
+      acordiones.forEach(boton => {
+        boton.addEventListener("click", function () {
+          this.classList.toggle("activo");
+          const panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            document.querySelectorAll(".contenido").forEach(p => p.style.maxHeight = null);
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
+  <style>
+    .acordeon {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-size: 18px;
+      margin-top: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .acordeon:hover {
+      background-color: #0056b3;
+    }
+
+    .acordeon.activo {
+      background-color: #003c80;
+    }
+
+    .contenido {
+      padding: 12px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background-color: #f1f1f1;
+      border-radius: 0 0 5px 5px;
+      color: #000;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -21,7 +69,6 @@
     </div>  
   </header>
 
-
   <nav>
     <a href="index.html">Inicio</a>
     <a href="#">Kit de supervivencia</a>
@@ -31,45 +78,75 @@
 
   <div class="container">
     <div class="main-content">
-      <h2>Kit de supervivencia</h2>
+      <h2>Kit de Supervivencia</h2>
 
-      <button class="acordeon">Carga Académica</button>
+      
+
+      <button class="acordeon">Autoridades Académicas</button>
       <div class="contenido">
-        <p>Revisa tu carga académica con frecuencia en el SICEI. Recuerda que puedes ajustar tu horario solo en las primeras semanas del semestre.</p>
+        <ul>
+          <li>Ernesto Antonio Guerrero Lara – Director</li>
+          <li>Martha Imelda Jarero Kumul – Secretaria Académica</li>
+          <li>José Alejandro Lara Rodríguez – Secretario Administrativo</li>
+          <li>Carlos Francisco Brito Loeza – Posgrado e Investigación</li>
+          <li>Elia Esther Pineda Zapata – Control Escolar</li>
+        </ul>
       </div>
 
-      <button class="acordeon">Contactar Profesores</button>
+      <button class="acordeon">Coordinadores y Contactos Académicos</button>
       <div class="contenido">
-        <p>Utiliza tu correo institucional y sé claro y respetuoso. Los profesores suelen responder dentro de uno o dos días hábiles.</p>
+        <p>Coordinadores por carrera y funciones específicas como tutorías, orientación educativa y deporte. Conserva sus correos para comunicación oficial.</p>
       </div>
 
-      <button class="acordeon">Grupos de Apoyo</button>
+      <button class="acordeon">Trámites Académicos</button>
       <div class="contenido">
-        <p>Únete a los grupos de WhatsApp o Telegram de tu generación. También puedes acercarte al Consejo Estudiantil si necesitas ayuda académica o emocional.</p>
+        <p>Incluye: revalidación, legalización, baja temporal, y procedimientos administrativos importantes.</p>
       </div>
 
-      <button class="acordeon">Bibliografía Recomendada</button>
+      <button class="acordeon">Tutorías y Apoyos</button>
       <div class="contenido">
-        <p>Pide a tus profesores recomendaciones de libros o accede a la biblioteca digital de la UADY. También puedes consultar recursos en línea confiables como Khan Academy, Libros UADY y más.</p>
+        <p>Solicita apoyo académico, emocional o vocacional con tu tutor o coordinador de carrera. Hay también acompañamientos y recursamientos.</p>
       </div>
+
+      
+
+      <button class="acordeon">Mallas Curriculares por Carrera</button>
+      <div class="contenido">
+        <p>Aquí puedes insertar imágenes de las mallas curriculares cuando las tengas:</p>
+        <img src="assets/software.png" alt="Malla Actuaría" class="malla-img">
+        <!-- <img src="assets/malla-lcc.png" alt="Malla Ciencias de la Computación" class="malla-img"> -->
+      </div>
+
+     
 
     </div>
 
     <div class="contacts">
-      <h3>Contactos</h3>
-      <!-- 
-      <p><img src="https://img.icons8.com/win10/512/FFFFFF/instagram-new.png" width="35px" alt="Instagram"> ce.fmat</p>
-      <p>Consejo Estudiantil FMAT 2025 - 2027</p>
-      <p>consejo.fmat 2025 - 2027</p>
-      -->
+      <h3 class="contacts-title">Contáctanos</h3>
+      <div class="contact-item">
+        <a href="https://www.instagram.com/ce.fmat/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.icons8.com/win10/512/FFFFFF/instagram-new.png" alt="Instagram">
+          <span>@ce.fmat</span>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.icons8.com/ios-filled/512/FFFFFF/facebook-new.png" alt="Facebook">
+          <span>Facebook</span>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.icons8.com/ios-filled/512/FFFFFF/linkedin.png" alt="LinkedIn">
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <p class="contact-footer">Consejo Estudiantil FMAT 2025 - 2027</p>
     </div>
   </div>
 
   <footer>
     &copy; 2025 Consejo Estudiantil FMAT. Todos los derechos reservados.
   </footer>
-
- 
 </body>
 </html>
-
